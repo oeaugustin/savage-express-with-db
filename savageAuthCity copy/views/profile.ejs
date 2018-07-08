@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <title>21 Savage Fan Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1>Welcome, <span><%= user.local.email %>!</span></h1>
+        <h2><span class="fas fa-home"></span> Profile Page</h2>
+        
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+                    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+
+            
+            <div class="write">
+          <h3>Add a Message</h3>
+        <% if (user.local.email) { %>
+          <form action="/messages" method="POST">
+            <input type="text" value="<%= user.local.email %>" name="name">
+            <textarea class="materialize-textarea" rows="5" name="msg" placeholder="message"></textarea>
+            <input type="text" placeholder="City" name="city">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <% } %>
+        <div class="read">
+              <h3>Messages</h3>
+              <ul class="messages">
+              <% for(var i=0; i<messages.length; i++) {%>
+                <li class="message">
+                  <span><%= messages[i].name %></span>
+                  <span><%= messages[i].msg %></span>
+                  <span><%= messages[i].thumbUp %></span>
+                  <span><%= messages[i].city %></span>
+                  <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+                  <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+                  <span><i class="fas fa-times" aria-hidden="true"></i></span>
+                </li>
+              <% } %>
+              </ul>
+            </div>
+        </div>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>

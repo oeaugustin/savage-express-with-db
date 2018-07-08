@@ -1,0 +1,32 @@
+*{
+	color: whitesmoke;
+}
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+  background:lightgrey;
+}
+img{
+  width: 45%;
+  border-radius: 5px;
+  margin: 10px;
+}
+.btn{
+	background: #00695c;
+	color: white;
+	padding: 2%;
+	border: none;
+}
+.btn:hover{
+	background: whitesmoke;
+	color: #00695c;
+	padding: 2%;
+	border: none;
+	
+}
+.jumbotron{
+	background: #ff9800;
+}
+h1{
+	margin-top: 0;
+}

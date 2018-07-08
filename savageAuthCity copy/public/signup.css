@@ -1,0 +1,31 @@
+/*signup.css*/
+body{
+	background: #ff9800;
+}
+.btn{
+	background: #00695c;
+}
+*{
+	color: white;
+}
+#email, #password{
+	border: none;
+	border-bottom: whitesmoke 1.5px solid;
+	background: transparent;
+}
+label.active{
+	color: white;
+	font-size: 1.5rem;
+}
+input{
+	font-size: 1.5rem;
+}
+a{
+	color: #00695c;
+}
+i{
+	color: #00695c;
+}
+form{
+	margin-top: 10vh;
+}

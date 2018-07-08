@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <title>21 Savage Fan Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+<div class="container">
+<div class="col-sm-6 col-sm-offset-3">
+
+    <h1><i class="fas fa-user-plus"></i> Signup</h1>
+
+    <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+
+    <!-- LOGIN FORM -->
+    <!-- <form action="/signup" method="post">
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password">
+        </div>
+
+        <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+    </form> -->
+       <form action="/login" method="post">
+         <div class="input-field">
+           <input type="email" id="email" name="email">
+           <label class="active" for="email">Email</label>
+         </div>
+         <div class="input-field">
+           <input type="password" id="password" name="password" class="validate">
+           <label class="active" for="password">Password</label>
+         </div>
+         <button type="submit" class="btn">Sign Up</button> 
+       </form>
+
+
+    <p>Already have an account? <a href="/login">Login</a></p>
+    <p>Or go <a href="/">Home</a></p>
+
+</div>
+</div>
+</body>
+</html>
